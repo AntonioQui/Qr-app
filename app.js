@@ -39,7 +39,6 @@ function sumar() {
 // Copiar
 function copiar() {
   navigator.clipboard.writeText(numero)
-    .then(() => alert("Copiado"))
     .catch(() => alert("Error al copiar"));
 }
 
