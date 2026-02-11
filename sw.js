@@ -1,42 +1,20 @@
-const CACHE_NAME = "qr-sacnner-01";
-
-const urlsToCache = [
-  "./",
-  "./index.html",
-  "./app.js",
-  "./manifest.json",
-  "./icon-192.png",
-  "./icon-512.png"
-];
-
-// Install
-self.addEventListener("install", event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(urlsToCache))
-      .catch(err => console.log("Cache error:", err))
+self.addEventListener("install", e => {
+  e.waitUntil(
+    caches.open("qr-cache").then(cache => {
+      return cache.addAll([
+        "index.html",
+        "app.js",
+        "manifest.json",
+        "https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"
+      ]);
+    })
   );
 });
 
-// Activate
-self.addEventListener("activate", event => {
-  event.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(
-        keys.map(key => {
-          if (key !== CACHE_NAME) {
-            return caches.delete(key);
-          }
-        })
-      )
-    )
-  );
-});
-
-// Fetch
-self.addEventListener("fetch", event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => response || fetch(event.request))
+self.addEventListener("fetch", e => {
+  e.respondWith(
+    caches.match(e.request).then(resp => {
+      return resp || fetch(e.request);
+    })
   );
 });
