@@ -1,0 +1,29 @@
+<body>
+
+  <h2>QR dinámico</h2>
+
+  <div id="qr"></div>
+
+  <h3 id="numero"></h3>
+
+  <button class="restar" onclick="restar()">Restar</button>
+  <button class="copiar" onclick="copiar()">Copiar</button>
+  <br><br>
+  <button class="sumar" onclick="sumar()">Sumar</button>
+
+  <br><br>
+  <!-- BOTÓN SCANNER -->
+  <button onclick="iniciarScanner()">Escanear QR</button>
+
+  <!-- Contenedor cámara -->
+  <div id="reader" style="width:300px; margin-top:20px; display:none;"></div>
+
+  <!-- Librería QR generator -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+
+  <!-- Librería QR scanner -->
+  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+
+  <script src="app.js"></script>
+
+</body>
