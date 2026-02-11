@@ -1,5 +1,5 @@
 // Número inicial o almacenado
-let numero = localStorage.getItem("qrNumber") || "00512146078";
+let numero = localStorage.getItem("qrNumber") || "00";
 
 const numeroEl = document.getElementById("numero");
 const qrEl = document.getElementById("qr");
