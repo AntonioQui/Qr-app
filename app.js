@@ -20,6 +20,12 @@ function actualizarUI() {
 
 actualizarUI();
 
+// Nuevo
+function nuevo(){
+  restar();
+  copiar();
+}
+
 // Restar
 function restar() {
   let n = parseInt(numero, 10);
