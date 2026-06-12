@@ -43,7 +43,7 @@ function copiar() {
 }
 
 // Nuevo
-function nuevo(){
+function nuevo() {
   restar();
   copiar();
 }
