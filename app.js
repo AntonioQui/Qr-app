@@ -20,12 +20,6 @@ function actualizarUI() {
 
 actualizarUI();
 
-// Nuevo
-function nuevo(){
-  restar();
-  copiar();
-}
-
 // Restar
 function restar() {
   let n = parseInt(numero, 10);
@@ -46,6 +40,12 @@ function sumar() {
 function copiar() {
   navigator.clipboard.writeText(numero)
     .catch(() => alert("Error al copiar"));
+}
+
+// Nuevo
+function nuevo(){
+  restar();
+  copiar();
 }
 
 // -------- SCANNER --------
