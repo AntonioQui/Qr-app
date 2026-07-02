@@ -44,8 +44,10 @@ function copiar() {
 
 // Nuevo
 function nuevo() {
+  alert("Entro en Nuevo");
   restar();
   copiar();
+  
   // test
 }
 
