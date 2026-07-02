@@ -46,6 +46,7 @@ function copiar() {
 function nuevo() {
   restar();
   copiar();
+  // test
 }
 
 // -------- SCANNER --------
